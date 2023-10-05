@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class Node{
+public:
+  int data;
+  Node * next;
+  Node(int data)
+  {
+    this->data=data;
+    next=NULL;
+  }
+};
+void insertAtTail(Node* &tail,int d)
+{
+    Node* n1=new Node(d);
+    tail->next=n1;
+    tail=tail->next;
+}
+
+void print(Node* head)
+{
+    Node* temp=head;
+    while(temp!=NULL)
+    {
+        cout<<temp->data<<" ";
+        temp=temp->next;
+    }
+    cout<<endl;
+}
+int main()
+{
+   Node* n= new Node(1);
+   Node* head=n;
+    Node* tail=n;
+    print(head);
+
+   insertAtTail(tail,2);
+   print(head);
+
+   insertAtTail(tail,3);
+   print(head);
+
+
+   
+}
